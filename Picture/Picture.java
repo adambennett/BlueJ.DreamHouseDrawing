@@ -1,4 +1,5 @@
 
+
 /**
  * This class represents a simple picture. You can draw the picture using
  * the draw method. But wait, there's more: being an electronic picture, it
@@ -14,8 +15,17 @@ public class Picture
 {
     private Square wall;
     private Square window;
+    private Square ground;
+    private Square house;
+    private Square windowL;
+    private Square windowR;
     private Triangle roof;
     private Circle sun;
+    private Circle knob;
+    private BoxBoy door;
+    private BoxBoy columnA;
+    private BoxBoy columnB;
+    private BoxBoy chimney;
 
     /**
      * Constructor for objects of class Picture
@@ -30,29 +40,68 @@ public class Picture
      */
     public void draw()
     {
-        wall = new Square();
-        wall.moveVertical(80);
-        wall.changeSize(100);
-        wall.makeVisible();
-
-        window = new Square();
-        window.changeColor("black");
-        window.moveHorizontal(20);
-        window.moveVertical(100);
-        window.makeVisible();
-
+        ground = new Square();
+        ground.changeSize(600);
+        ground.moveTo(0, 230);
+        ground.changeColor("green");
+        ground.makeVisible();
+        house = new Square();
+        house.changeSize(120);
+        house.moveTo(80, 130);
+        house.makeVisible();
+        
+        columnA = new BoxBoy();
+        columnA.changeSize(5, 95);
+        columnA.moveTo(60,135);
+        columnA.changeColor("black");
+        columnA.makeVisible();
+        
+        columnB = new BoxBoy();
+        columnB.changeSize(5, 95);
+        columnB.moveTo(215,135);
+        columnB.changeColor("black");
+        columnB.makeVisible();
+        
         roof = new Triangle();
-        roof.changeSize(50, 140);
-        roof.moveHorizontal(60);
-        roof.moveVertical(70);
+        roof.changeColor("orange");
+        roof.changeSize(80, 180);
+        roof.moveTo(140, 55);
         roof.makeVisible();
-
+        
+        door = new BoxBoy();
+        door.changeColor("black");
+        door.changeSize(30, 45);
+        door.moveTo(125, 205);
+        door.makeVisible();
+        
+        windowL = new Square();
+        windowL.changeColor("blue");
+        windowL.changeSize(30);
+        windowL.moveTo(90, 150);
+        windowL.makeVisible();
+        windowR = new Square();
+        windowR.changeSize(30);
+        windowR.moveTo(150, 150);
+        windowR.changeColor("blue");
+        windowR.makeVisible();
+        
         sun = new Circle();
         sun.changeColor("yellow");
-        sun.moveHorizontal(180);
-        sun.moveVertical(-10);
-        sun.changeSize(60);
+        sun.moveTo(20, 20);
+        sun.changeSize(55);
         sun.makeVisible();
+        
+        chimney = new BoxBoy();
+        chimney.changeColor("orange");
+        chimney.moveTo(90, 55);
+        chimney.changeSize(20, 50);
+        chimney.makeVisible();
+        
+        knob = new Circle();
+        knob.changeColor("magenta");
+        knob.changeSize(10);
+        knob.moveTo(142, 223);
+        knob.makeVisible();
     }
 
     /**
