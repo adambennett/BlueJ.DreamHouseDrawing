@@ -97,6 +97,14 @@ public class Circle
         yPosition += distance;
         draw();
     }
+    
+    public void moveTo(int x, int y)
+    {
+        erase();
+        xPosition = x;
+        yPosition = y;
+        draw();
+    }
 
     /**
      * Slowly move the circle horizontally by 'distance' pixels.
@@ -158,7 +166,7 @@ public class Circle
 
     /**
      * Change the color. Valid colors are "red", "yellow", "blue", "green",
-     * "magenta" and "black".
+     * "magenta", "black", and "orange".
      */
     public void changeColor(String newColor)
     {

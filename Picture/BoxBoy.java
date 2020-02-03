@@ -88,6 +88,14 @@ public class BoxBoy
         xPosition += distance;
         draw();
     }
+    
+    public void moveTo(int x, int y)
+    {
+        erase();
+        xPosition = x;
+        yPosition = y;
+        draw();
+    }
 
     /**
      * Move the square vertically by 'distance' pixels.
